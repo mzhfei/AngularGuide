@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="page-header">Game</div>
+  <div class="row">
+   <app-game-control
+    (numberToSend)="onNumberReceive($event)"
+   ></app-game-control>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div *ngFor="let n of numbers;">
+        <div *ngIf="(n%2 ==0)">
+          <div class="col-xs-5 text-center">
+            <app-even [n]="n"></app-even>
+          </div>
+        </div>
+
+        <div *ngIf="n%2 ==1">
+          <div class="col-xs-7 text-center">
+            <app-odd [n]="n"></app-odd>
+          </div>
+        </div>
+      </div>
+  </div>
+
+</div>
